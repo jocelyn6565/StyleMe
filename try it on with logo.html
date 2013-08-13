@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+  <head>
+  
+  
+  
+  
+  
+  <script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+
+		
+		
+#div1 {width:200px;height:600px;padding:10px;border:1px;}
+
+
+/*#drag1 {width:200px;height:600px;padding:10px;border:1px;}
+#drag2 {width:200px;height:600px;padding:10px;border:1px;}*/
+
+
+#jump {position: relative}
+
+
+#drag1 {top: -550px; left: 300px; position: relative}
+#drag2 {top:-500px; left:200px; position: relative}
+
+
+
+
+
+</style>
+<script>
+
+function allowDrop(ev)
+{
+ev.preventDefault();
+}
+
+function drag(ev)
+{
+ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop(ev)
+{
+ev.preventDefault();
+var data=ev.dataTransfer.getData("Text");
+/*ev.target.appendChild(document.getElementById(data));*/
+var element= $("#"+data);
+element.css ("position", "absolute");
+if (data=== "drag2"){
+element.css ("left", "45px");
+element.css ("top", "680px");
+}
+else { 
+element.css ("left", "45px");
+element.css ("top", "565px");
+}
+}
+</script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ <!-- <div class="PositionLogo">
+  <img src="stylemelogo.png" width="450" height="250">-->
+  </div>
+  	<script type="text/javascript">
+	var image1 = new Image()
+	image1.src = "StyleMeWebsite2.jpg"
+	
+	var image2 = new Image()
+	image2.src = "StyleMePictureWebsite3.jpg"
+	
+	var image3 = new Image()
+	image3.src = "StyleMePictureWeb4.jpg"
+	
+	</script>
+  		
+        
+    <link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+    
+    <style>
+    
+     .centertext{text-align:center}
+     body {
+         font-family: 'Wire One', sans-serif;
+         font-size: 100px;
+        }
+     
+      ul{list-style-type:none;margin:0;padding:0;}
+	  li{display:inline;}
+	  
+	  .bodyButton {font-size: 18px;}
+	  .inputButton{font-size: 10px;}
+	  .buttonSize{ width: 10em; length: 30em;}
+	  
+	  .PositionSignIn{ position:absolute;top:5px;right:10px;}
+	  /*.PositionLogo{ position:absolute;top:1px;right:400px;}*/
+	  
+    </style>
+    
+  </head>
+  
+  <body  bgcolor="#8AF69E">
+  
+  
+  
+  
+  <div class='centertext'> <img src="stylemelogo.png" width="450" height="250"></div>
+    <ul class='centertext'>
+    <font size="6.8">
+    
+	
+	<li style="padding:10px;"><a href="file://localhost/Users/GWC/Documents/linkingthesites.html#Home">Home</a></li>    
+	<li style="padding:10px;"><a href="file://localhost/Users/GWC/Documents/shop.html">Shop</a></li>
+	<li style="padding:10px;"><a href="file://localhost/Users/GWC/Documents/try%20it%20on%20with%20logo.html">Try it On</a></li>
+	<li style="padding:10px;"><a href="file://localhost/Users/GWC/Documents/My%20Closet.html">My Closet</a></li>
+	<li style="padding:10px;"><a href="file://localhost/Users/GWC/Documents/myaccount.html">My Account</a></li>
+	
+	
+	
+	
+	</ul>
+	</font>
+	</div>
+  
+  
+  
+  
+	
+	
+	
+	
+	
+	
+	<center><font size="6">Drag the clothing on to the manikin.</font></center>
+
+<div>
+<img id="div1" src="manikin.png"ondrop="drop(event)" ondragover="allowDrop(event)">
+
+
+
+<br>
+<img  id="drag1" draggable="true" ondragstart="drag(event)" src="tank.png"  width="400" height="270">
+<img  id="drag2" draggable="true" ondragstart="drag(event)" src="skirt1.png" width="400" height="300">
+</div>
+
+
+	
+    
+    
+   
+  </body>
+</html>
